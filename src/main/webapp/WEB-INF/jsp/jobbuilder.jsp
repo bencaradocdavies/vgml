@@ -4,7 +4,8 @@
 <html>
 
 <head>
-    <title>VGL Portal - Build Job</title>
+    <title>Virtual Geometallurgy Laboratory - Submit Job</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/grid-examples.css">

@@ -3,7 +3,8 @@
 <html>
 
 <head>
-    <title>AuScope VGL Workflow  - Monitor Jobs</title>
+    <title>Virtual Geometallurgy Laboratory - Manage Jobs</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/grid-examples.css">
