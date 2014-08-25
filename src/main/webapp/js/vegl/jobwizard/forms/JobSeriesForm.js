@@ -166,32 +166,14 @@ Ext.define('vegl.jobwizard.forms.JobSeriesForm', {
     beginValidation : function(callback) {
         var radioGroup = this.getComponent('seriesRadioGroup');
         var wizardState = this.wizardState;
-        var numDownloadReqs = this.getNumDownloadRequests();
-
         if (radioGroup.getValue().sCreateSelect === 0) {
             if (Ext.isEmpty(wizardState.seriesId)) {
                 Ext.Msg.alert('No series selected', 'Please select a series to add the new job to.');
                 callback(false);
                 return;
             }
-
-            if (!wizardState.skipConfirmPopup && numDownloadReqs === 0) {
-                Ext.Msg.confirm('Confirm',
-                        'No data set has been captured. Do you want to continue?',
-                        function(button) {
-                            if (button === 'yes') {
-                                wizardState.skipConfirmPopup = true;
-                                callback(true);
-                                return;
-                            } else {
-                                callback(false);
-                                return;
-                            }
-                    });
-            } else {
-                callback(true);
-                return;
-            }
+            callback(true);
+            return;
         } else {
             var seriesName = this.getSeriesCombo().getRawValue();
             var seriesDesc = this.getSeriesDesc().getRawValue();
@@ -200,35 +182,10 @@ Ext.define('vegl.jobwizard.forms.JobSeriesForm', {
                 callback(false);
                 return;
             }
-
             var csFunc = this.createSeries(wizardState, seriesName, seriesDesc, callback);
-
-            if (numDownloadReqs === 0) {
-                Ext.Msg.confirm('Confirm',
-                        'No data set has been captured. Do you want to continue?',
-                        function(button) {
-                            if (button === 'yes') {
-                                //Request our new series is created
-                                csFunc();
-                            } else {
-                                callback(false);
-                                return;
-                            }
-                    });
-            } else {
-                //Request our new series is created
-                csFunc();
-            }
+            //Request our new series is created
+            csFunc();
         }
-    },
-
-    getNumDownloadRequests : function() {
-        request = ((window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"));
-        request.open("GET", "getNumDownloadRequests.do", false); //<-- false makes it a synchonous request!
-        request.send(null);
-        respObj = Ext.JSON.decode(request.responseText);
-        size = respObj.data;
-        return size;
     },
 
     createSeries : function(wizardState, seriesName, seriesDesc, callback) {

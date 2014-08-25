@@ -74,7 +74,7 @@ Ext.define('vegl.widgets.JobInputFilesPanel', {
 
         Ext.apply(config, {
             viewConfig : {
-                emptyText : '<p class="centeredlabel">This job doesn\'t have any input files or service downloads configured. You can add some by using the add button below or by selecting a dataset from the <a href="gmap.html">main page</a>.</p>'
+                emptyText : '<p class="centeredlabel">This job doesn\'t have any input files or service downloads configured. You can add some by using the add button below.</p>'
             },
             features : [Ext.create('Ext.grid.feature.Grouping',{
                 groupHeaderTpl: '{name} ({[values.rows.length]} {[values.rows.length > 1 ? "Items" : "Item"]})'

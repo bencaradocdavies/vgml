@@ -75,6 +75,10 @@ Ext.define('vegl.HelpHandler', {
     Ext.onReady(function() {
         var helpButtonEl = Ext.get('help-button');
 
+        if (helpButtonEl == null) {
+            return;
+        }
+
         //If its a new user - highlight the help button an in unobtrusive manner
         if (window['NEW_SESSION'] === 'true') {
             vegl.HelpHandler.highlightElement(5000, helpButtonEl);
@@ -139,7 +143,7 @@ Ext.define('vegl.HelpHandler', {
                     highlightEl : jobsP.getEl(),
                     title : 'Manage Jobs',
                     anchor : 'right',
-                    description : 'After selecting a series, a list of all jobs belonging to that series will be displayed here. Selecting a job will bring up information about that job in the details panel. You can manage individual jobs by right clicking them or by selecting a job and pressing \'Actions\'<br/><br/>If you\'d like more information about the job states, please consult the <a target="_blank" href="https://www.seegrid.csiro.au/wiki/NeCTARProjects/Vhirl/WebHome">VHIRL wiki</a>.'
+                    description : 'After selecting a series, a list of all jobs belonging to that series will be displayed here. Selecting a job will bring up information about that job in the details panel. You can manage individual jobs by right clicking them or by selecting a job and pressing \'Actions\'.'
                 }),Ext.create('portal.util.help.Instruction', {
                     highlightEl : detailsP.getEl(),
                     title : 'Inspect Job',

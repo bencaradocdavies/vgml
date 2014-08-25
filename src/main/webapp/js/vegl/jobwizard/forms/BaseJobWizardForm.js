@@ -18,7 +18,7 @@ Ext.define('vegl.jobwizard.forms.BaseJobWizardForm', {
      * Set this to true in a child class to skip the warning when the user attempts to navigate
      * away from the page
      */
-    noWindowUnloadWarning : false,
+    noWindowUnloadWarning : true /*false*/,
 
     /**
      * An array of button objects/config objects that will be inserted between the previous and next buttons.

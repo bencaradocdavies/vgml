@@ -35,8 +35,8 @@ public class UserSessionInterceptor extends HandlerInterceptorAdapter {
             LOG.warn("Failed to retrieve user principal.");
             ModelMap model = new ModelMap();
             model.put("success", false);
-            model.put("msg", "Your session has timed out or login credentails are no longer valid.");
-            model.put("debugInfo", "Please refresh this page or go to <a href='/VGL-Portal'>VGL Home Page</a> to start again.");
+            model.put("msg", "Your session has timed out or login credentials are no longer valid.");
+            model.put("debugInfo", "Please refresh this page or go to <a href='/vgml'>the VGML Home Page</a> to start again.");
             JSONView view = new JSONView();
             view.render(model, request, response);
             return false;

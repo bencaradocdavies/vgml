@@ -692,11 +692,11 @@ public class JobBuilderController extends BaseCloudController {
         } catch (IOException e) {
             logger.error("Job bootstrap creation failed.", e);
             errorDescription = "There was a problem creating startup script.";
-            errorCorrection = "Please report this error to cg_admin@csiro.au";
+            errorCorrection = "Please report this error to cg-admin@csiro.au";
         } catch (Exception e) {
             logger.error("Job submission failed.", e);
             errorDescription = "An unexpected error has occurred while submitting your job for processing.";
-            errorCorrection = "Please report this error to cg_admin@csiro.au";
+            errorCorrection = "Please report this error to cg-admin@csiro.au";
         }
 
         if (succeeded) {
@@ -751,7 +751,7 @@ public class JobBuilderController extends BaseCloudController {
         job.setUser(user.getEmail());
         job.setEmailAddress(user.getEmail());
         job.setComputeInstanceKey("vgl-developers");
-        job.setName("VGL-Job " + new Date().toString());
+        job.setName("VGML-Job " + new Date().toString());
         job.setDescription("");
         job.setStatus(STATUS_UNSUBMITTED);
 
@@ -761,8 +761,6 @@ public class JobBuilderController extends BaseCloudController {
         session.setAttribute(JobDownloadController.SESSION_DOWNLOAD_LIST, null); //ensure we clear the list out in case the user makes more jobs
         if (erddapDownloads != null) {
             job.setJobDownloads(new ArrayList<VglDownload>(erddapDownloads));
-        } else {
-            logger.warn("No downloads configured for user session!");
         }
 
         //Save our job to the database before setting up staging directories (we need an ID!!)

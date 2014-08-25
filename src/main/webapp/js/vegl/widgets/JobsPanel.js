@@ -165,14 +165,14 @@ Ext.define('vegl.widgets.JobsPanel', {
                 }
             }),
             columns: columns,
-            buttons: [{
+            buttons: [/*{
                 text: 'Register to GeoNetwork',
                 itemId : 'btnRegister',
                 disabled : true,
                 hidden : config.hideRegisterButton,
                 tooltip: 'Register the job result into GeoNetwork',
                 handler: Ext.bind(this._onRegisterToGeonetwork, this)
-            },{
+            },*/{
                 text: 'Refresh',
                 itemId : 'btnRefresh',
                 tooltip : 'Refresh the list of jobs for the selected series',
@@ -285,14 +285,13 @@ Ext.define('vegl.widgets.JobsPanel', {
     _onRefresh : function(btn) {
         if (this.currentSeries) {
             this.listJobsForSeries(this.currentSeries, true);
-            this.queryById('btnRegister').setDisabled(true);
+            /*this.queryById('btnRegister').setDisabled(true);*/
         }
     },
 
     _onJobSelection : function(sm, job) {
         var allowedToRegister = (job.get('status') === vegl.models.Job.STATUS_DONE) && Ext.isEmpty(job.get('registeredUrl'));
-        this.queryById('btnRegister').setDisabled(!allowedToRegister);
-
+        /*this.queryById('btnRegister').setDisabled(!allowedToRegister);*/
         this.fireEvent('selectjob', this, job);
     },
 
@@ -475,9 +474,9 @@ Ext.define('vegl.widgets.JobsPanel', {
         popup.on('close', function() {
                     this.refreshJobsForSeries();
                     this.cleanupJobWizard("repeatJobPanel");
-                    if (this.jobSeriesFrm != null) {
+                    /*if (this.jobSeriesFrm != null) {
                         this.jobSeriesFrm.noWindowUnloadWarning = false;
-                    }
+                    }*/
                 }, this);
 
         popup.show();
@@ -511,9 +510,9 @@ Ext.define('vegl.widgets.JobsPanel', {
         //value if the edit job action is performed via Submit Jobs tab
         popup.on('close', function() {
                     this.cleanupJobWizard("editJobPanel");
-                    if (this.jobSeriesFrm != null) {
+                    /*if (this.jobSeriesFrm != null) {
                         this.jobSeriesFrm.noWindowUnloadWarning = false;
-                    }
+                    }*/
                 }, this);
 
         popup.show();

@@ -10,7 +10,7 @@ ScriptBuilder.Components.getComponents = function(selectedToolbox) {
         children : []
     };
 
-    switch (selectedToolbox.toLowerCase()) {
+    /*switch (selectedToolbox.toLowerCase()) {
         case "ubc-gif":
             comps.children.push(ScriptBuilder.Components.getUBCExamples());
             break;
@@ -27,7 +27,7 @@ ScriptBuilder.Components.getComponents = function(selectedToolbox) {
             comps.children.push(ScriptBuilder.Components.getUBCExamples());
             comps.children.push(ScriptBuilder.Components.getEscriptExamples());
             comps.children.push(ScriptBuilder.Components.getUnderworldExamples());
-    }
+    }*/
 
     return comps;
 };

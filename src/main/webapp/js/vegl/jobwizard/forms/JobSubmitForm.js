@@ -52,7 +52,7 @@ Ext.define('vegl.jobwizard.forms.JobSubmitForm', {
                     }
                 } else {
                     errorMsg = "There was an error submitting your script for processing.";
-                    errorInfo = "Please try again in a few minutes or report this error to cg_admin@csiro.au.";
+                    errorInfo = "Please try again in a few minutes or report this error to cg-admin@csiro.au.";
                 }
 
                 //Create an error object and pass it to custom error window
