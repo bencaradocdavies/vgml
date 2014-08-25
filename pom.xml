@@ -8,6 +8,11 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>vgml</name>
+    <scm>
+        <connection>scm:git:https://github.com/AuScope/vgml</connection>
+        <developerConnection>scm:git:ssh://git@github.com/AuScope/vgml</developerConnection>
+        <url>https://github.com/AuScope/vgml</url>
+    </scm>
 
     <!-- Build Configuration -->
     <build>
