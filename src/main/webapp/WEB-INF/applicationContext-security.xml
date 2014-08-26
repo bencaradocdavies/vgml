@@ -11,7 +11,6 @@
    <http entry-point-ref="oAuth2EntryPoint">
         <intercept-url pattern="/gridsubmit.html" access="ROLE_USER"/>
         <intercept-url pattern="/jobbuilder.html" access="ROLE_USER"/>
-        <intercept-url pattern="/login.html" access="ROLE_USER"/>
         <intercept-url pattern="/joblist.html" access="ROLE_USER"/>
         <intercept-url pattern="/admin.html" access="ROLE_ADMINISTRATOR"/>
         <intercept-url pattern="/*.diag" access="ROLE_ADMINISTRATOR"/>
