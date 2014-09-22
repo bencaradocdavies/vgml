@@ -44,15 +44,26 @@
         <beans:constructor-arg name="clientSecret" value="${env.oauth2.google.clientsecret}"/>
     </beans:bean>
 
-    <beans:bean id="simpleUserLoader" class="org.auscope.portal.core.server.security.oauth2.GoogleOAuth2UserDetailsLoader">
-        <beans:constructor-arg name="defaultRole" value="ROLE_USER"/>
+    <beans:bean id="simpleUserLoader" class="org.auscope.portal.server.web.security.EmailGoogleOAuth2UserDetailsLoader">
+        <beans:constructor-arg name="defaultRole" value="ROLE_NONE"/>
         <beans:constructor-arg name="rolesByUser">
             <beans:map>
-                <!-- Joshua Vote -->
-                <beans:entry key="105810302719127403909">
+                <beans:entry key="jjvote@gmail.com">
                     <beans:list>
+                        <beans:value>ROLE_USER</beans:value>
                         <beans:value>ROLE_ADMINISTRATOR</beans:value>
-                        <beans:value>ROLE_UBC</beans:value>
+                    </beans:list>
+                </beans:entry>
+                <beans:entry key="bencaradocdavies@gmail.com">
+                    <beans:list>
+                        <beans:value>ROLE_USER</beans:value>
+                        <beans:value>ROLE_ADMINISTRATOR</beans:value>
+                    </beans:list>
+                </beans:entry>
+                <beans:entry key="angus.j.mcfarlane@gmail.com">
+                    <beans:list>
+                        <beans:value>ROLE_USER</beans:value>
+                        <beans:value>ROLE_ADMINISTRATOR</beans:value>
                     </beans:list>
                 </beans:entry>
             </beans:map>
