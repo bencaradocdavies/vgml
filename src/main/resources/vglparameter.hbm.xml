@@ -3,15 +3,14 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="org.auscope.portal.server.vegl.VglParameter" table="parameters">
-        <id name="id" column="id">
-            <generator class="native"/>
+        <id name="id">
+            <generator class="sequence">
+                <param name="sequence">parameters_id_seq</param>
+            </generator>
         </id>
-
         <property name="name"/>
         <property name="value"/>
         <property name="type"/>
-
         <many-to-one name="parent" column="jobId" not-null="true"></many-to-one>
     </class>
 </hibernate-mapping>
-

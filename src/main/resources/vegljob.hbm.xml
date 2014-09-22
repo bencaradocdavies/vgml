@@ -26,13 +26,11 @@
         <property name="seriesId"/>
         <property name="storageBaseKey"/>
         <property name="emailNotification" type="yes_no" />
-
         <map name="jobParameters" lazy="false" cascade="all" inverse="true">
             <key column="jobId"/>
             <map-key column="name" type="string"/>
             <one-to-many class="org.auscope.portal.server.vegl.VglParameter"/>
         </map>
-
         <bag name="jobDownloads" lazy="false" cascade="all-delete-orphan" inverse="true">
             <key column="jobId" />
             <one-to-many class="org.auscope.portal.server.vegl.VglDownload" />

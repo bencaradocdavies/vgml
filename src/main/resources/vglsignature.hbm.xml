@@ -3,8 +3,10 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="org.auscope.portal.server.vegl.VGLSignature" table="signatures">
-        <id name="id" column="id">
-            <generator class="native"/>
+        <id name="id">
+            <generator class="sequence">
+                <param name="sequence">signatures_id_seq</param>
+            </generator>
         </id>
         <property name="user"/>
         <property name="individualName"/>
