@@ -272,9 +272,14 @@
             <url>http://maven.geotoolkit.org/</url>
         </repository>
         <repository>
-            <id>cgsrv8.arrc.csiro.au</id>
-            <name>AuScope Artifactory - PortalRepo</name>
-            <url>https://cgsrv8.arrc.csiro.au/artifactory/PortalRepo</url>
+            <id>cgsrv8-nexus-portal-snapshot</id>
+            <name>cgsrv8 Nexus PortalSnapshot</name>
+            <url>https://cgsrv8.arrc.csiro.au/nexus/content/repositories/PortalSnapshot</url>
+        </repository>
+        <repository>
+            <id>cgsrv8-nexus-portal-nightly</id>
+            <name>cgsrv8 Nexus PortalRepoNightly</name>
+            <url>https://cgsrv8.arrc.csiro.au/nexus/content/repositories/PortalRepoNightly</url>
         </repository>
     </repositories>
 
